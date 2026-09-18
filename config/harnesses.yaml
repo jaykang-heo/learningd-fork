@@ -1,0 +1,9 @@
+# Harness adapters this distro is known to run under (spec 46).
+# The repository root is the entrypoint; no harness-specific skill install is
+# part of the user contract.
+schema_version: 1
+canonical_contract: "AGENTS.md"
+harnesses:
+  - claude-code
+  - codex
+  - cursor

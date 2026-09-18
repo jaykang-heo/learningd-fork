@@ -1,0 +1,37 @@
+# Admission floors for a production run (spec 25.2, 27, 28).
+# These are not a quality score. Meeting them is necessary, never sufficient:
+# every floor here exists to keep prose walls and slide-reading videos out, and
+# a semantic gate still has to agree that the artifact teaches.
+schema_version: 1
+
+visuals:
+  minimum_substantive_visuals: 20
+  minimum_dynamic_artifacts: 8
+  minimum_recap_visuals: 8
+  minimum_contrast_visuals: 3
+  minimum_proof_visuals: 2
+  maximum_core_viewports_without_meaningful_visual_event: 2
+  core_inference_visual_coverage: 1.0
+
+document:
+  minimum_scene_sections: 12
+  minimum_text_chars: 45000
+  maximum_text_chars: 190000
+  require_static_fallback_for_dynamic: true
+  allow_remote_scripts: false
+
+video:
+  minimum_width: 1920
+  minimum_height: 1080
+  minimum_fps: 24
+  require_audio_stream: true
+  minimum_duration_seconds: 300
+  maximum_duration_seconds: 3600
+  maximum_seconds_without_visual_event: 6.0
+  require_captions: true
+
+audio:
+  maximum_true_peak_db: -1.0
+  minimum_mean_db: -30.0
+  require_release_quality_provider: true
+  require_perceptual_review: true

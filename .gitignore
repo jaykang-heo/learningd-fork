@@ -10,7 +10,10 @@ scratchpad*
 __pycache__/
 *.pyc
 .env
-config/
+# Firstmate keeps per-operator knob files here (config/backend, config/crew-harness,
+# ...), which stay local. The product's canonical policy files are committed.
+config/*
+!config/*.yaml
 
 .tools/
 
