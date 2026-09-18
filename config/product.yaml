@@ -1,7 +1,7 @@
 # Product identity and the user-facing output contract (spec 1.5, 9.1).
 schema_version: 1
 product:
-  name: "native-learning-agent-distro"
+  name: "learningd"
   domain: "algorithmic and computer-science problems"
 outputs:
   lesson: "lesson.html"

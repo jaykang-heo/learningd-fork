@@ -1,4 +1,4 @@
-# Native Deep Learning Media Agent Distro
+# learningd
 
 A GitHub-native agent distro that turns one natural-language request about a
 technical problem into two verified artifacts:
