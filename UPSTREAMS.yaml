@@ -1,0 +1,18 @@
+# Canonical owner of upstream provenance (spec 5.4).
+# README, release notes and sync scripts must read this file rather than keep
+# their own copy of a SHA.
+schema_version: 1
+upstreams:
+  firstmate:
+    role: base-lineage
+    repository: kunchenguid/firstmate
+    imported_commit: "9bc051ff43c6e4d23c163ee8f1d87551a11050c0"
+    license: MIT
+  pstack:
+    role: imported-history
+    repository: cursor/plugins
+    source_path: pstack/
+    staging_path: vendor-staging/pstack/
+    imported_commit: "e31650eea443aaea1e84cc15d88c13f40080b275"
+    filter: "git-filter-repo --path pstack/ --path-rename pstack/:vendor-staging/pstack/"
+    license: MIT

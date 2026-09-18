@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "receipt.schema.json",
+  "title": "Gate receipt",
+  "type": "object",
+  "required": ["schema_version", "gate", "status", "inputs", "tool", "created_at", "receipt_sha256"],
+  "properties": {
+    "schema_version": {"type": "integer"},
+    "gate": {"type": "string"},
+    "status": {"type": "string", "enum": ["pass", "fail"]},
+    "inputs": {"type": "object"},
+    "tool": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {"name": {"type": "string"}, "version": {"type": "string"}}
+    },
+    "created_at": {"type": "string"},
+    "detail": {"type": "object"},
+    "receipt_sha256": {"type": "string"}
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "storyboard.schema.json",
+  "title": "Storyboard",
+  "type": "object",
+  "required": ["schema_version", "shots"],
+  "properties": {
+    "schema_version": {"type": "integer"},
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["shot_id", "scene_id", "duration_seconds", "visual_events"],
+        "properties": {
+          "shot_id": {"type": "string"},
+          "scene_id": {"type": "string"},
+          "duration_seconds": {"type": "number"},
+          "visual_events": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["at_seconds", "kind"],
+              "properties": {
+                "at_seconds": {"type": "number"},
+                "kind": {"type": "string"},
+                "entities": {"type": "array", "items": {"type": "string"}}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

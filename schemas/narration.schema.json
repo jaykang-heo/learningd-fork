@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "narration.schema.json",
+  "title": "Spoken narration",
+  "type": "object",
+  "required": ["schema_version", "provider", "scenes"],
+  "properties": {
+    "schema_version": {"type": "integer"},
+    "provider": {
+      "type": "object",
+      "required": ["name", "release_quality"],
+      "properties": {
+        "name": {"type": "string"},
+        "model": {"type": "string"},
+        "release_quality": {"type": "boolean"}
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["scene_id", "intent", "pace", "beats"],
+        "properties": {
+          "scene_id": {"type": "string"},
+          "intent": {"type": "string"},
+          "pace": {"type": "string"},
+          "beats": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "emphasis": {"type": "array", "items": {"type": "string"}},
+          "pronunciation_refs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

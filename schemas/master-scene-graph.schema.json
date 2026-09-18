@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "master-scene-graph.schema.json",
+  "title": "Master Scene Graph",
+  "description": "Structure only; ordering and coverage invariants live in engine/narrative/scene_graph.py.",
+  "type": "object",
+  "required": ["schema", "kind", "narrative_id", "scenes"],
+  "properties": {
+    "schema": {"type": "integer"},
+    "kind": {"type": "string", "enum": ["master-scene-graph"]},
+    "narrative_id": {"type": "string"},
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "scene_id", "title", "phase", "core", "core_inference", "goal",
+          "primary_message", "question", "visual_job", "requires_dynamic",
+          "visuals", "narration", "conclusion", "facts", "prerequisites"
+        ],
+        "properties": {
+          "scene_id": {"type": "string"},
+          "title": {"type": "string"},
+          "phase": {"type": "string"},
+          "core": {"type": "boolean"},
+          "core_inference": {"type": "boolean"},
+          "goal": {"type": "string"},
+          "primary_message": {"type": "string"},
+          "question": {"type": "string"},
+          "visual_job": {"type": "string"},
+          "requires_dynamic": {"type": "boolean"},
+          "visuals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["visual_id", "kind"],
+              "properties": {
+                "visual_id": {"type": "string"},
+                "kind": {"type": "string", "enum": ["static", "dynamic", "hybrid", "decorative"]},
+                "roles": {"type": "array", "items": {"type": "string"}},
+                "entities": {"type": "array", "items": {"type": "string"}},
+                "substantive": {"type": "boolean"}
+              }
+            }
+          },
+          "narration": {"type": "array", "items": {"type": "string"}},
+          "conclusion": {"type": "string"},
+          "transition_question": {"type": "string"},
+          "facts": {"type": "array", "items": {"type": "string"}},
+          "prerequisites": {"type": "array", "items": {"type": "string"}},
+          "deep_dive_refs": {"type": "array", "items": {"type": "string"}},
+          "source_quotes": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

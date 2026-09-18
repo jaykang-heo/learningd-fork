@@ -13,3 +13,9 @@ __pycache__/
 config/
 
 .tools/
+
+# Production run state: durable per-run evidence, never committed.
+runs/
+dist/
+__pycache__/
+*.pyc
