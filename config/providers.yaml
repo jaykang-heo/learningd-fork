@@ -1,0 +1,12 @@
+# Canonical owner of provider selection (spec 33, 34).
+# `voice.provider` is Remaining Decision R1. Until a release-quality provider is
+# configured here, runs can render audio with a development adapter but the
+# voice gate cannot pass, so no natural-voice release can happen.
+schema_version: 1
+voice:
+  provider: "local-say"      # development only; not release quality
+  voice_id: "Yuna"
+  locale: "ko-KR"
+  release_quality: false
+visual_media:
+  provider: null             # programmatic SVG/Remotion/Manim only unless set
